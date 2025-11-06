@@ -1,0 +1,1 @@
+# just to make news_data a Python package to solve streamlit's import quirks

@@ -1,0 +1,16 @@
+// 1. Unique index on url (fast updates by url)
+db.articles.createIndex(
+  { url: 1 },
+  { unique: true }
+)
+
+// 2. Compound index on (date, final_score) for fast reads & sorted queries
+db.articles.createIndex(
+  { date: 1, final_score: -1 }
+)
+
+// verify
+db.articles.getIndexes()
+
+// unique url constraint
+db.all_articles.createIndex( { "url": 1 }, { unique: true } )
